@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.weather {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  margin: 100px auto;
+}
+
+.weather .icon {
+  width: 200px;
+  height: 100px;
+}
