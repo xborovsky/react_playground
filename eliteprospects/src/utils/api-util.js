@@ -25,3 +25,9 @@ export const getPlayerDetail = (id) => {
         .then((response) => response.data.data,
             (error) => console.error(error));
 };
+
+export const getPlayerStats = (id) => {
+    return axios.get(`${URLS.PLAYER_DETAIL}/${id}/stats?apikey=${API_KEY}&sort=season.startYear:desc`)
+        .then((response) => response.data.data,
+            (error) => console.error(error));
+};
