@@ -5,8 +5,9 @@ import Header from './Header';
 import Search from './search/Search';
 import Players from './players/Players';
 import Player from './players/Player';
+import Teams from './teams/Teams';
+import Team from './teams/Team';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-//import Teams from './teams/Teams';
 
 class App extends Component {
 
@@ -19,6 +20,8 @@ class App extends Component {
             <Route path='/' exact={true} component={Search} />
             <Route path='/players' component={Players} />
             <Route path='/player/:id' component={Player} />
+            <Route path='/teams' component={Teams} />
+            <Route path='/team/:id' component={Team} />
           </div>
         </div>
       </Router>

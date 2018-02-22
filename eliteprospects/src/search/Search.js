@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import SearchForm from './SearchForm';
 import Auxiliary from './../common/Auxiliary';
-import {findPlayers, findTeams} from './../utils/api-util';
+import {findPlayers} from './../utils/players-api-util';
+import {findTeams} from './../utils/teams-api-util';
 import { Redirect } from 'react-router-dom';
 
 class Search extends Component {
@@ -34,7 +35,7 @@ class Search extends Component {
     onSearchTeam(evt) {
         evt.preventDefault();
         findTeams(this.state.team).then((teams) => {
-            console.log(teams);
+            this.setState({ foundTeams : teams });
         });
     }
 

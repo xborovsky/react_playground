@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getPlayerDetail, getPlayerStats} from './../utils/api-util';
+import {getPlayerDetail, getPlayerStats} from './../utils/players-api-util';
 import PlayerDetail from './PlayerDetail';
 import PlayerStats from './PlayerStats';
 import Auxiliary from './../common/Auxiliary';
