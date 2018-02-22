@@ -3,6 +3,8 @@ import {getPlayerDetail, getPlayerStats} from './../utils/players-api-util';
 import PlayerDetail from './PlayerDetail';
 import PlayerStats from './PlayerStats';
 import Auxiliary from './../common/Auxiliary';
+import PlayerMenu from './PlayerMenu';
+import { Route } from 'react-router-dom';
 
 class Player extends Component {
     constructor(props) {
@@ -16,21 +18,21 @@ class Player extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         getPlayerDetail(id).then((player) => {
-            console.log(player);
             this.setState({player});
         });
         getPlayerStats(id).then((stats) => {
-            console.log(stats);
             this.setState({stats});
         });
     }
 
     render() {
-        const {player, stats} = this.state;
+        const {player, stats, match} = this.state;
         return (
             <Auxiliary>
-                <PlayerDetail player={player} />
-                <PlayerStats stats={stats} />
+                <PlayerMenu player={player} />
+
+                <Route path={`/player/:id/info`} render={() => <PlayerDetail player={player} />} />
+                <Route path={`/player/:id/stats`} render={() => <PlayerStats stats={stats} />} />
             </Auxiliary>
         );
     }

@@ -45,7 +45,7 @@ class Players extends Component {
                         })}
                     </tbody>
                 </table>
-                {this.state.selectedPlayer && <Redirect to={`/player/${this.state.selectedPlayer}`} />}
+                {this.state.selectedPlayer && <Redirect to={`/player/${this.state.selectedPlayer}/info`} />}
             </Auxiliary>
         );
     }
