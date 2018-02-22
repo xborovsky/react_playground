@@ -4,6 +4,8 @@ import TeamRoster from './TeamRoster';
 import {getTeamDetail, getTeamRoster} from './../utils/teams-api-util';
 import {getCurrentSeason} from './../utils/season-api-util';
 import Auxiliary from '../common/Auxiliary';
+import {Route} from 'react-router-dom';
+import TeamMenu from './TeamMenu';
 
 class Team extends Component {
     constructor(props) {
@@ -34,8 +36,10 @@ class Team extends Component {
         const {team, roster} = this.state;
         return (
             <Auxiliary>
-                <TeamDetail team={team} />
-                <TeamRoster roster={roster} />
+                <TeamMenu team={team} />
+
+                <Route path={`/team/:id/info`} render={() => <TeamDetail team={team} />} />
+                <Route path={`/team/:id/roster`} render={() => <TeamRoster roster={roster} />} />
             </Auxiliary>
         );
     };

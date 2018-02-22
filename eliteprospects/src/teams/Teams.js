@@ -41,7 +41,7 @@ class Teams extends Component {
                         })}
                     </tbody>
                 </table>
-                {this.state.selectedTeam && <Redirect to={`/team/${this.state.selectedTeam}`} />}
+                {this.state.selectedTeam && <Redirect to={`/team/${this.state.selectedTeam}/info`} />}
             </Auxiliary>
         );
     }
