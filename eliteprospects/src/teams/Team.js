@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import TeamDetail from './TeamDetail';
-import {getTeamDetail} from './../utils/teams-api-util';
+import TeamRoster from './TeamRoster';
+import {getTeamDetail, getTeamRoster} from './../utils/teams-api-util';
+import {getCurrentSeason} from './../utils/season-api-util';
+import Auxiliary from '../common/Auxiliary';
 
 class Team extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            team : null
+            team : null,
+            roster : null
         };
     }
 
     componentDidMount() {
         getTeamDetail(this.props.match.params.id)
             .then(
-                (team) => this.setState({team}),
+                (team) => {
+                    this.setState({team});
+                    getCurrentSeason()
+                        .then((season) => 
+                            getTeamRoster(this.state.team.id, season.name)
+                                .then((roster) => {
+                                    console.log(roster);
+                                    this.setState({roster})}));
+                },
                 (error) => console.error(error) // TODO error interceptor??
             );
     }
 
     render() {
-        const {team} = this.state;
+        const {team, roster} = this.state;
         return (
-            <TeamDetail team={team} />
+            <Auxiliary>
+                <TeamDetail team={team} />
+                <TeamRoster roster={roster} />
+            </Auxiliary>
         );
     };
 }

@@ -7,12 +7,22 @@ const URLS = {
 
 export const findTeams = (team) => {
     return axios.get(`${URLS.SEARCH_TEAMS}${team}`)
-        .then((response) => response.data.teams.data,
+        .then(
+            (response) => response.data.teams.data,
             (error) => console.error(error));
 };
 
 export const getTeamDetail = (id) => {
     return axios.get(`${URLS.TEAMS}/${id}`)
-        .then((response) => response.data.data,
+        .then(
+            (response) => response.data.data,
             (error) => console.error(error));
+};
+
+export const getTeamRoster = (teamId, seasonName) => {
+    return axios.get(`${URLS.TEAMS}/${teamId}/roster?season=${seasonName}`)
+        .then(
+            (response) => response.data.data,
+            (error) => console.error(error));
+
 };
