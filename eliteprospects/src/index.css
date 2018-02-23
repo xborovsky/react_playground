@@ -11,3 +11,21 @@ body {
 tr.link:hover {
   background: #EEE;
 }
+
+th {
+  text-align: center;
+}
+
+footer {
+  position: relative;
+}
+
+.footer {
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+  background-color: #1c1e22;
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.6);
+  border-radius: 6px;
+}

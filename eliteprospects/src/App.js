@@ -7,6 +7,7 @@ import Players from './players/Players';
 import Player from './players/Player';
 import Teams from './teams/Teams';
 import Team from './teams/Team';
+import Footer from './Footer';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path='/teams' component={Teams} />
             <Route path='/team/:id' component={Team} />
           </div>
+          <Footer />
         </div>
       </Router>
     );
