@@ -29,3 +29,7 @@ footer {
   border: 1px solid rgba(0,0,0,0.6);
   border-radius: 6px;
 }
+
+.img-thumbnail {
+  max-width: 200px;
+}

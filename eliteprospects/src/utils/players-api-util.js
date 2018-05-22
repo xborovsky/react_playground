@@ -22,3 +22,9 @@ export const getPlayerStats = (id) => {
         .then((response) => response.data.data,
             (error) => console.error(error));
 };
+
+export const getPlayerProfile = (id) => {
+    return axios.get(`${URLS.PLAYER_DETAIL}/${id}/profile`)
+        .then((response) => response.data.data,
+            (error) => console.error(error));
+};

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Footer = () => 
-    <footer class="container">
-        <div class="footer">
-            <span class="text-muted">Data provided by Eliteprospects.com</span>
+const Footer = () =>
+    <footer className="container">
+        <div className="footer">
+            <span className="text-muted">Data provided by <a href="http://www.eliteprospects.com" target="_blank" rel="noopener noreferrer">Eliteprospects.com</a></span>
         </div>
     </footer>
 ;
