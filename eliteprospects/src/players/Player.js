@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getPlayerDetail, getPlayerStats, getPlayerProfile} from './../utils/players-api-util';
 import PlayerDetail from './PlayerDetail';
 import PlayerStats from './PlayerStats';
+import PlayerAwards from './PlayerAwards';
 import Auxiliary from './../common/Auxiliary';
 import PlayerMenu from './PlayerMenu';
 import { Route } from 'react-router-dom';
@@ -36,7 +37,8 @@ class Player extends Component {
                 <PlayerMenu player={player} />
 
                 <Route path={`/player/:id/info`} render={() => <PlayerDetail player={player} profile={profile} />} />
-                <Route path={`/player/:id/stats`} render={() => <PlayerStats stats={stats} />} />
+                <Route path={`/player/:id/stats`} render={() => <PlayerStats player={player} stats={stats} />} />
+                <Route path={`/player/:id/awards`} render={() => <PlayerAwards player={player} />} />
             </Auxiliary>
         );
     }

@@ -18,7 +18,7 @@ const PlayerStatsByLeague = ({stats}) => {
                     return;
                 }
             });
-            if (!exists) {
+            if (!exists && element.GP) {
                 result.push({
                     leagueName : element.league.fullName,
                     GP : element.GP,
@@ -40,6 +40,7 @@ const PlayerStatsByLeague = ({stats}) => {
     return (
         stats ?
         <table className="table table-striped">
+            <caption>Career totals</caption>
             <thead>
                 <tr>
                     <th>League</th>

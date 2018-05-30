@@ -37,7 +37,7 @@ class Players extends Component {
                                     <td>{cnt+1}</td>
                                     <td>{player.firstName + ' ' + player.lastName}</td>
                                     <td>{player.dateOfBirth}</td>
-                                    <td>{`${player.country.name} (${player.country.continent})`}</td>
+                                    <td>{player.country !== undefined ? `${player.country.name} (${player.country.continent})` : ''}</td>
                                     <td>{player.playerPosition}</td>
                                     <td>{player.playerStatus}</td>
                                 </tr>

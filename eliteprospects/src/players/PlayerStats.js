@@ -1,11 +1,13 @@
 import React from 'react';
 import PlayerStatsByLeague from './PlayerStatsByLeague';
 import Auxiliary from './../common/Auxiliary';
+import {getPlayerName} from './player.util';
 
-const PlayerStats = ({stats}) =>
+const PlayerStats = ({player, stats}) =>
     stats ?
         <Auxiliary>
             <table className="table table-striped">
+                <caption>Player statistics ({getPlayerName(player)})</caption>
                 <thead>
                     <tr>
                         <th>Season</th>
@@ -26,7 +28,11 @@ const PlayerStats = ({stats}) =>
                     return (
                         <tr key={cnt}>
                             <td>{stat.season.name}</td>
-                            <td>{stat.team.fullName + ' (' + stat.league.country.abbreviation + ')'}</td>
+                            <td>
+                                {(stat.team.fullName.length ? stat.team.fullName : stat.team.name)}
+                                &nbsp;
+                                {(stat.league.country !== undefined ? (' (' + stat.league.country.abbreviation + ')') : '')}
+                            </td>
                             <td>{stat.league.fullName}</td>
                             <td>{stat.team.teamClass}</td>
                             <td>{stat.league.playerLevel}</td>
