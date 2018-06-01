@@ -44,7 +44,7 @@ const PlayerDetail = ({player, profile}) =>
                     : null}
                 </tbody>
             </table>
-            <StarRating />
+            <StarRating playerId={player.id} />
         </div>
         : <div>Loading...</div>
 ;

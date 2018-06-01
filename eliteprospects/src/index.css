@@ -8,6 +8,10 @@ body {
   cursor: pointer;
 }
 
+caption {
+  font-size: 1.5em;
+}
+
 tr.link:hover {
   background: #EEE;
 }
@@ -32,4 +36,19 @@ footer {
 
 .img-thumbnail {
   max-width: 200px;
+}
+
+.star-rating {
+  margin: 20px auto;
+}
+
+.star-rating-star-wrapper {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.star-rating-star {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
