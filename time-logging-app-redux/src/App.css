@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+form {
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  padding: 10px;
+}
+
+.card, form, .btn-create-timer {
+  margin-top: 10px;
+}
+
+.card .time {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.timer-management {
+  font-size: 11pt;
+}
+
+.timer-management i {
+  cursor: pointer;
+}
